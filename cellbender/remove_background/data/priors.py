@@ -94,7 +94,8 @@ def _peak_density_given_cutoff(umi_counts: np.ndarray,
                        num=1000,
                        base=10)
     inds = [max(0, min(int(ind - n_putative_cells), len(noncell_counts) - 1)) for ind in inds]
-
+    print(np.sort(noncell_counts)[::-1])
+    print(inds)
     noncell_counts = np.sort(noncell_counts)[::-1][inds]
 
     # find the peak density: that is the empty count prior
